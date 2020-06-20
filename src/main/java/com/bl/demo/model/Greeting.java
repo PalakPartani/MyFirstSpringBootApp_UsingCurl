@@ -2,7 +2,7 @@ package com.bl.demo.model;
 
 public class Greeting {
     private long counter;
-    private String name;
+    public String name;
 
     public Greeting(long counter, String name) {
         this.counter = counter;
