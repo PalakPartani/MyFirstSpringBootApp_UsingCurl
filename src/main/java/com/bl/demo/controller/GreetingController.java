@@ -20,6 +20,10 @@ public class GreetingController {
     public Greeting greeting(@RequestBody Greeting greeting) {
         return new Greeting(counter.incrementAndGet(),String.format(template,greeting.name));
     }
+    @PutMapping("/put/{name}")
+    public Greeting greetingUpdate(@PathVariable Greeting greeting) {
+        return new Greeting(counter.incrementAndGet(),String.format(template,greeting.getName()));
+    }
 }
 
 
