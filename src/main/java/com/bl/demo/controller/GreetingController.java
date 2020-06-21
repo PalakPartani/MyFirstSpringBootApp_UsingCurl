@@ -42,6 +42,10 @@ public class GreetingController {
         user.setLastName(lName);
         return greetingService.updateGreetingsById(id,user);
     }
+    @DeleteMapping("/delete/{id}")
+    public Greeting deleteUserById(@PathVariable Long id){
+        return greetingService.deleteById(id);
+    }
 }
 
 
@@ -79,4 +83,3 @@ public class GreetingController {
     public Greeting greetingUpdate(@PathVariable Greeting greeting) {
         return new Greeting(counter.incrementAndGet(),String.format(template,greeting.getName()));
     }*/
-}
