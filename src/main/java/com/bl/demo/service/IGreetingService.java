@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface IGreetingService {
     Greeting addGreeting(User user);
+    Greeting getGreetingsById(long id);
     List<Greeting> getAllGreetings();
 
 }
