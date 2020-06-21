@@ -35,6 +35,27 @@ public class GreetingController {
         return greetingService.getGreetingsById(id);
     }
 
+    @PutMapping("/update/{id}")
+    public Greeting updateGreetingById(@PathVariable Long id,@RequestParam(value = "fName") String fName,@RequestParam(value="lName") String lName){
+        User user = new User();
+        user.setFirstName(fName);
+        user.setLastName(lName);
+        return greetingService.updateGreetingsById(id,user);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
