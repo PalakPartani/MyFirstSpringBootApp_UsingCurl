@@ -1,8 +1,18 @@
 package com.bl.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table
 public class Greeting {
+    @Id
     private long counter;
+
     public String name;
+
+    public Greeting() {
+    }
 
     public Greeting(long counter, String name) {
         this.counter = counter;
@@ -23,5 +33,6 @@ public class Greeting {
 
     public void setName(String name) {
         this.name = name;
+
     }
 }
