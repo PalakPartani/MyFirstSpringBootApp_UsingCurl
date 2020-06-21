@@ -6,8 +6,12 @@ import com.bl.demo.model.User;
 import com.bl.demo.service.IGreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
 @RestController
 public class GreetingController {
 
@@ -22,6 +26,12 @@ public class GreetingController {
         user.setFirstName(firstName);
         user.setLastName(lastName);
         return greetingService.addGreeting(user);
+    }
+
+    @RequestMapping("/getallgreeting")
+    public List<Greeting> getAllGreeting() {
+        return greetingService.getAllGreetings();
+
     }
 /*
 @RestController
